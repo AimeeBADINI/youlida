@@ -12,13 +12,13 @@ export default function Navbar() {
       </div>
       <nav className="nav">
         <Link to="/">Accueil</Link>
-        <Link to="/a-propos">À propos</Link>
-        <Link to="/actions">Nos actions</Link>
-        <Link to="/evenements">Événements</Link>
-        <Link to="/adhesion">Adhésion</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/temoignages">Témoignages</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/AboutPage">À propos</Link>
+        <Link to="/Actions">Nos actions</Link>
+        <Link to="/Evenements">Événements</Link>
+        <Link to="/Adhesion">Adhésion</Link>
+        <Link to="/BlogPage">Blog</Link>
+        <Link to="/Temoignages">Témoignages</Link>
+        <Link to="/ContactPage">Contact</Link>
       </nav>
     </header>
   );

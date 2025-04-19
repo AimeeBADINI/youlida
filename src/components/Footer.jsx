@@ -1,8 +1,10 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light pt-5 pb-3">
+    <div className="bg-footer">
+    <footer className="text-light pt-5 pb-3">
       <div className="container">
         <div className="row text-center text-md-start">
           {/* À propos */}
@@ -48,6 +50,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </div>
   );
 };
 
