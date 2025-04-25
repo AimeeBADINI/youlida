@@ -11,7 +11,7 @@ export default function Navbar() {
 
       <div className="container-fluid">
         <Link className="navbar-brand d-flex align-items-center " to="/">
-          <img src={logo} alt="Logo Youlida" className="me-2" style={{ height: "60px" }} />
+          <img src={logo} alt="Logo Youlida" className="me-2" style={{ height: "70px" }} />
           <span className="text-white">YOULIDA</span>
         </Link>
         
