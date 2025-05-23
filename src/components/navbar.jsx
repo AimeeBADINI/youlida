@@ -15,8 +15,8 @@ export default function Navbar() {
       <div className="container-fluid">
         {/* Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/" onClick={closeMenu}>
-          <img src={logo} alt="Logo Youlida" className="me-2" style={{ height: "70px" }} />
-          <span className="text-white">YOULIDA</span>
+          <img src={logo} alt="Logo Youlida" className="me-2" style={{ height: "150px" }} />
+          {/* <span className="text-white">YOULIDA</span> */}
         </Link>
 
         {/* Bouton hamburger */}
@@ -36,11 +36,11 @@ export default function Navbar() {
             {[
               { path: "/", label: "Accueil" },
               { path: "/AboutPage", label: "Qui Sommes-Nous?" },
-              { path: "/Actions", label: "Nos Actions" },
+              { path: "/NosActions", label: "Nos Actions" },
               { path: "/ContactPage", label: "Contact" },
               // { path: "/Evenements", label: "Événements" },
               { path: "/Adhesion", label: "S'engager" },
-              // { path: "/BlogPage", label: "Blog" },
+              // { path: "/BlogPage", label: "Faire un Don" },
               // { path: "/Temoignages", label: "Témoignages" },
             ].map(({ path, label }) => (
               <li className="nav-item" key={path}>

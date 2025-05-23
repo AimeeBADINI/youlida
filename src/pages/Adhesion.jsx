@@ -123,7 +123,7 @@ export default function SEngager() {
           <h1 className="mb-3">{t.actNow}</h1>
           <img
             src="appel.jpg"
-            alt="Image appel à l'action"
+            alt="Image cta"
             className="img-fluid mb-4"
             style={{ maxWidth: 350 }}
           />
