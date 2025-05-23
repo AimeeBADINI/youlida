@@ -1,60 +1,60 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./Navbar.css"; // Assurez-vous d'importer le fichier CSS
+import "./Navbar.css";
 
 export default function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#1e293b" }}>
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
+  return (
+    <nav className="navbar navbar-expand-lg sticky-top" style={{ backgroundColor: "#1e293b" }}>
       <div className="container-fluid">
-        <Link className="navbar-brand d-flex align-items-center " to="/">
+        {/* Logo */}
+        <Link className="navbar-brand d-flex align-items-center" to="/" onClick={closeMenu}>
           <img src={logo} alt="Logo Youlida" className="me-2" style={{ height: "70px" }} />
           <span className="text-white">YOULIDA</span>
         </Link>
-        
-        {/* Bouton menu hamburger */}
-        <button
-  className="navbar-toggler"
-  type="button"
-  data-bs-toggle="collapse"
-  data-bs-target="#navbarNav"
-  aria-controls="navbarNav"
-  aria-expanded="false"
-  aria-label="Toggle navigation"
->
-  <span className="navbar-toggler-icon"></span>
-</button>
 
-        {/* Liens de navigation */}
-        <div className="collapse navbar-collapse" id="navbarNav">
+        {/* Bouton hamburger */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={toggleMenu}
+          aria-expanded={isOpen ? "true" : "false"}
+          aria-label="Toggle navigation"
+        >
+          {isOpen ? <FaTimes color="white" /> : <FaBars color="white" />}
+        </button>
+
+        {/* Liens */}
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/">Accueil</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/AboutPage">À propos</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/Actions">Nos actions</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/Evenements">Événements</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/Adhesion">Adhésion</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/BlogPage">Blog</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/Temoignages">Témoignages</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-white" to="/ContactPage">Contact</Link>
-            </li>
+            {[
+              { path: "/", label: "Accueil" },
+              { path: "/AboutPage", label: "À propos" },
+              { path: "/Actions", label: "Nos actions" },
+              { path: "/Evenements", label: "Événements" },
+              { path: "/Adhesion", label: "Adhésion" },
+              { path: "/BlogPage", label: "Blog" },
+              { path: "/Temoignages", label: "Témoignages" },
+              { path: "/ContactPage", label: "Contact" },
+            ].map(({ path, label }) => (
+              <li className="nav-item" key={path}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active text-white" : "nav-link text-white"
+                  }
+                  to={path}
+                  onClick={closeMenu}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
