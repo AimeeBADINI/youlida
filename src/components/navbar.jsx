@@ -35,13 +35,13 @@ export default function Navbar() {
           <ul className="navbar-nav ms-auto">
             {[
               { path: "/", label: "Accueil" },
-              { path: "/AboutPage", label: "À propos" },
-              { path: "/Actions", label: "Nos actions" },
-              { path: "/Evenements", label: "Événements" },
-              { path: "/Adhesion", label: "Adhésion" },
-              { path: "/BlogPage", label: "Blog" },
-              { path: "/Temoignages", label: "Témoignages" },
+              { path: "/AboutPage", label: "Qui Sommes-Nous?" },
+              { path: "/Actions", label: "Nos Actions" },
               { path: "/ContactPage", label: "Contact" },
+              // { path: "/Evenements", label: "Événements" },
+              { path: "/Adhesion", label: "S'engager" },
+              // { path: "/BlogPage", label: "Blog" },
+              // { path: "/Temoignages", label: "Témoignages" },
             ].map(({ path, label }) => (
               <li className="nav-item" key={path}>
                 <NavLink
